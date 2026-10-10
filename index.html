@@ -117,12 +117,13 @@
     .picks-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
     .pick{background:#fff;border:1px solid var(--champagne);display:flex;flex-direction:column;transition:.3s}
     .pick:hover{transform:translateY(-6px);box-shadow:0 22px 40px rgba(110,27,34,.14);border-color:var(--gold)}
-    .pick .art{height:170px;display:grid;place-items:center;position:relative;color:var(--gold)}
+    .pick .art{height:190px;display:grid;place-items:center;position:relative;color:var(--gold)}
     .pick:nth-child(1) .art{background:linear-gradient(145deg,var(--oxblood),var(--burgundy))}
     .pick:nth-child(2) .art{background:linear-gradient(145deg,#3b0d11,var(--oxblood))}
     .pick:nth-child(3) .art{background:linear-gradient(145deg,var(--burgundy),#a8404a)}
     .pick:nth-child(4) .art{background:linear-gradient(145deg,var(--espresso),#4a2a22)}
     .pick .art svg{width:60px;height:60px;stroke:var(--gold);fill:none;stroke-width:1.2}
+    .pick .art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
     .pick .art::after{content:"";position:absolute;inset:12px;border:1px solid rgba(201,162,39,.45)}
     .pick .body{padding:26px 24px 28px;display:flex;flex-direction:column;flex:1}
     .pick h3{font-size:1.65rem;color:var(--oxblood);margin-bottom:8px}
@@ -309,35 +310,35 @@
         </div>
         <div class="picks-grid">
           <article class="pick">
-            <div class="art"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 4 20 12l8 1-6 6 1.5 9L16 24l-7.5 4L10 19l-6-6 8-1z"/></svg></div>
+            <div class="art"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 4 20 12l8 1-6 6 1.5 9L16 24l-7.5 4L10 19l-6-6 8-1z"/></svg><img src="images/picks-fashion.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
             <div class="body">
               <h3>Fashion &amp; Style</h3>
               <p>Clothing, shoes and accessories with a refined touch.</p>
-              <a class="soon" href="picks.html" style="text-decoration:none;display:block">See the picks &rarr;</a>
+              <a class="soon" href="picks.html#fashion" style="text-decoration:none;display:block">See the picks &rarr;</a>
             </div>
           </article>
           <article class="pick">
-            <div class="art"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M9 6h14l5 7-12 15L4 13zM4 13h24M12 6l-2 7 6 15 6-15-2-7"/></svg></div>
+            <div class="art"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M9 6h14l5 7-12 15L4 13zM4 13h24M12 6l-2 7 6 15 6-15-2-7"/></svg><img src="images/picks-beauty.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
             <div class="body">
               <h3>Beauty &amp; Jewelry</h3>
               <p>Skincare, fragrance and fine jewelry worth the splurge.</p>
-              <a class="soon" href="picks.html" style="text-decoration:none;display:block">See the picks &rarr;</a>
+              <a class="soon" href="picks.html#beauty" style="text-decoration:none;display:block">See the picks &rarr;</a>
             </div>
           </article>
           <article class="pick">
-            <div class="art"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 15 16 5l12 10M7 13v13h18V13M13 26v-7h6v7"/></svg></div>
+            <div class="art"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 15 16 5l12 10M7 13v13h18V13M13 26v-7h6v7"/></svg><img src="images/picks-home.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
             <div class="body">
               <h3>Home &amp; Living</h3>
               <p>Interiors, decor and everyday luxuries for a beautiful home.</p>
-              <a class="soon" href="picks.html" style="text-decoration:none;display:block">See the picks &rarr;</a>
+              <a class="soon" href="picks.html#home" style="text-decoration:none;display:block">See the picks &rarr;</a>
             </div>
           </article>
           <article class="pick">
-            <div class="art"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 20 29 8l-5 18-7-6-4 5-1-7z"/></svg></div>
+            <div class="art"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 20 29 8l-5 18-7-6-4 5-1-7z"/></svg><img src="images/picks-travel.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
             <div class="body">
               <h3>Luxury Travel</h3>
               <p>Hotels, flights and experiences worth the upgrade.</p>
-              <a class="soon" href="picks.html" style="text-decoration:none;display:block">See the picks &rarr;</a>
+              <a class="soon" href="picks.html#travel" style="text-decoration:none;display:block">See the picks &rarr;</a>
             </div>
           </article>
         </div>
