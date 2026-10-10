@@ -3,202 +3,419 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nina NGold | Finance Meets Luxury</title>
-  <meta name="description" content="Nina NGold is an AI-generated finance and luxury lifestyle persona sharing curated picks. Some links are affiliate links.">
+  <title>Nina NGold | Where Finance Meets Luxury</title>
+  <meta name="description" content="Nina NGold is an AI-generated finance and luxury lifestyle persona. Money lessons, curated picks and refined living. Some links are affiliate links.">
+  <meta property="og:title" content="Nina NGold | Where Finance Meets Luxury">
+  <meta property="og:description" content="An AI-generated finance and luxury lifestyle persona. Money lessons, curated picks and refined living.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#6E1B22">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%236E1B22'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='30' font-weight='700' text-anchor='middle' fill='%23C9A227'%3ENN%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --oxblood: #6E1B22;
-      --burgundy: #8C2733;
-      --gold: #C9A227;
-      --champagne: #E8D6A8;
-      --ivory: #F7F1E6;
-      --golden-hour: #F2B857;
-      --espresso: #2B1A15;
+      --oxblood:#6E1B22; --burgundy:#8C2733; --gold:#C9A227; --champagne:#E8D6A8;
+      --ivory:#F7F1E6; --golden-hour:#F2B857; --espresso:#2B1A15;
+      --ink-soft:#5a4a43; --line:rgba(201,162,39,.45);
+      --serif:"Cormorant Garamond", Georgia, "Times New Roman", serif;
+      --sans:"DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
-      background: var(--ivory);
-      color: var(--espresso);
-      line-height: 1.65;
-    }
-    h1, h2, h3, .serif { font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif; }
-    a { color: inherit; }
-    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--sans);background:var(--ivory);color:var(--espresso);line-height:1.7;-webkit-font-smoothing:antialiased}
+    img{max-width:100%;display:block}
+    a{color:inherit}
+    .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+    .label{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;font-weight:700;color:var(--gold)}
+    .label.dark{color:var(--burgundy)}
+    h1,h2,h3,.serif{font-family:var(--serif);font-weight:600;line-height:1.05}
+    .ornament{display:flex;align-items:center;gap:14px;justify-content:center;color:var(--gold);margin:18px 0}
+    .ornament::before,.ornament::after{content:"";height:1px;width:70px;background:var(--line)}
+    .ornament i{width:7px;height:7px;background:var(--gold);transform:rotate(45deg);display:block}
 
-    /* Disclosure bar */
-    .ai-bar {
-      background: var(--espresso);
-      color: var(--champagne);
-      font-size: 0.82rem;
-      text-align: center;
-      padding: 9px 16px;
-      letter-spacing: 0.02em;
-    }
-    .ai-bar strong { color: var(--gold); }
+    /* Top bar */
+    .topbar{background:var(--espresso);color:var(--champagne);font-size:.78rem;text-align:center;padding:9px 16px;letter-spacing:.04em}
+    .topbar b{color:var(--gold);font-weight:700}
 
-    /* Header */
-    header { background: var(--oxblood); color: var(--ivory); }
-    .nav { display: flex; align-items: center; justify-content: space-between; padding-top: 18px; padding-bottom: 18px; gap: 16px; flex-wrap: wrap; }
-    .logo { font-family: "Cormorant Garamond", Georgia, serif; font-size: 1.7rem; font-weight: 700; letter-spacing: 0.04em; text-decoration: none; }
-    .logo span { color: var(--gold); }
-    nav a { margin-left: 22px; text-decoration: none; font-size: 0.92rem; color: var(--champagne); }
-    nav a:hover { color: var(--gold); }
+    /* Nav */
+    .site-header{position:sticky;top:0;z-index:50;background:rgba(110,27,34,.97);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:74px;gap:20px}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ivory)}
+    .mono{width:40px;height:40px;border:1px solid var(--gold);display:grid;place-items:center;font-family:var(--serif);font-weight:700;font-size:1.15rem;color:var(--gold);letter-spacing:.02em}
+    .brand-name{font-family:var(--serif);font-size:1.65rem;font-weight:700;letter-spacing:.06em}
+    .brand-name span{color:var(--gold)}
+    .nav ul{display:flex;gap:34px;list-style:none}
+    .nav ul a{text-decoration:none;color:var(--champagne);font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;padding:6px 0;border-bottom:1px solid transparent;transition:.2s}
+    .nav ul a:hover{color:var(--gold);border-color:var(--gold)}
+    .btn{display:inline-block;text-decoration:none;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;padding:15px 30px;transition:.25s;border:1px solid var(--gold)}
+    .btn.solid{background:var(--gold);color:var(--espresso)}
+    .btn.solid:hover{background:var(--golden-hour);border-color:var(--golden-hour)}
+    .btn.line{color:var(--ivory);background:transparent}
+    .btn.line:hover{background:rgba(201,162,39,.16)}
+    .btn.sm{padding:11px 20px;font-size:.7rem}
 
     /* Hero */
-    .hero { background: linear-gradient(160deg, var(--oxblood) 0%, var(--burgundy) 100%); color: var(--ivory); padding: 56px 0 72px; }
-    .hero-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; align-items: center; }
-    .eyebrow { color: var(--gold); text-transform: uppercase; letter-spacing: 0.22em; font-size: 0.78rem; font-weight: 700; margin-bottom: 14px; }
-    .hero h1 { font-size: clamp(2.6rem, 6vw, 4.4rem); line-height: 1.05; font-weight: 600; margin-bottom: 18px; }
-    .hero h1 em { color: var(--gold); font-style: italic; }
-    .hero p { font-size: 1.08rem; color: var(--champagne); max-width: 34em; margin-bottom: 28px; }
-    .btn { display: inline-block; background: var(--gold); color: var(--espresso); padding: 13px 28px; border-radius: 2px; font-weight: 700; text-decoration: none; letter-spacing: 0.04em; font-size: 0.95rem; }
-    .btn:hover { background: var(--golden-hour); }
-    .btn.ghost { background: transparent; color: var(--ivory); border: 1px solid var(--gold); margin-left: 10px; }
-    .btn.ghost:hover { background: rgba(201, 162, 39, 0.15); }
-    .portrait {
-      aspect-ratio: 4 / 5;
-      border: 2px solid var(--gold);
-      outline: 1px solid rgba(201, 162, 39, 0.4);
-      outline-offset: 10px;
-      background: radial-gradient(circle at 50% 30%, var(--burgundy), var(--oxblood) 70%);
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      color: var(--gold); text-align: center; padding: 20px;
-    }
-    .portrait .mono { font-family: "Cormorant Garamond", Georgia, serif; font-size: 4.6rem; font-weight: 600; line-height: 1; }
-    .portrait small { color: var(--champagne); margin-top: 12px; font-size: 0.8rem; letter-spacing: 0.08em; }
+    .hero{position:relative;overflow:hidden;color:var(--ivory);background:
+      radial-gradient(900px 500px at 78% 40%, rgba(242,184,87,.20), transparent 60%),
+      linear-gradient(155deg,var(--oxblood) 0%,#561318 55%,#3b0d11 100%)}
+    .hero::before{content:"";position:absolute;inset:0;opacity:.07;pointer-events:none;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+    .hero-grid{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:70px;align-items:center;padding:84px 24px 96px}
+    .hero h1{font-size:clamp(3.1rem,7vw,6rem);margin:22px 0 26px;letter-spacing:-.01em}
+    .hero h1 em{font-style:normal;color:inherit;font-weight:600}
+    .hero .lede{font-size:1.12rem;color:var(--champagne);max-width:32em;margin-bottom:38px}
+    .cta{display:flex;gap:14px;flex-wrap:wrap}
+    .hero-meta{display:flex;gap:34px;margin-top:52px;padding-top:26px;border-top:1px solid var(--line);flex-wrap:wrap}
+    .hero-meta div{font-size:.8rem;color:var(--champagne);letter-spacing:.04em}
+    .hero-meta strong{display:block;font-family:var(--serif);font-size:1.7rem;color:var(--gold);font-weight:600;letter-spacing:0}
 
-    /* Sections */
-    section { padding: 68px 0; }
-    .section-title { text-align: center; margin-bottom: 40px; }
-    .section-title h2 { font-size: clamp(2rem, 4vw, 2.8rem); color: var(--oxblood); font-weight: 600; }
-    .section-title p { color: #6b5a52; max-width: 36em; margin: 8px auto 0; }
-    .rule { width: 64px; height: 2px; background: var(--gold); margin: 14px auto 0; }
+    /* Portrait: arch frame */
+    .portrait-wrap{position:relative;max-width:430px;margin:0 auto;width:100%}
+    .portrait-wrap::before{content:"";position:absolute;inset:-16px -16px 16px 16px;border:1px solid var(--gold);border-radius:999px 999px 0 0;opacity:.7}
+    .portrait{position:relative;aspect-ratio:4/5.4;border-radius:999px 999px 0 0;overflow:hidden;border:2px solid var(--gold);
+      background:radial-gradient(circle at 50% 28%,var(--burgundy),var(--oxblood) 72%);box-shadow:0 30px 60px rgba(0,0,0,.35)}
+    .portrait .fallback{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--gold);text-align:center}
+    .portrait .fallback b{font-family:var(--serif);font-size:6rem;font-weight:600;line-height:1}
+    .portrait .fallback small{font-size:.7rem;letter-spacing:.3em;color:var(--champagne);margin-top:10px}
+    .portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top}
+    .tag-chip{position:absolute;left:-18px;bottom:46px;background:var(--ivory);color:var(--oxblood);padding:12px 18px;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;border-left:3px solid var(--gold);box-shadow:0 14px 30px rgba(0,0,0,.25)}
+    .tag-chip span{display:block;color:var(--ink-soft);letter-spacing:.08em;text-transform:none;font-weight:400;font-size:.76rem;margin-top:2px}
 
-    /* Pick cards */
-    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 22px; }
-    .card { background: #fff; border: 1px solid var(--champagne); border-top: 3px solid var(--gold); padding: 26px 22px; }
-    .card h3 { font-size: 1.5rem; color: var(--oxblood); margin-bottom: 8px; }
-    .card p { font-size: 0.95rem; color: #5a4a43; margin-bottom: 16px; }
-    .tag { display: inline-block; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--burgundy); border: 1px solid var(--champagne); padding: 4px 10px; background: var(--ivory); }
+    /* Ticker */
+    .ticker{background:var(--espresso);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px 0;overflow:hidden}
+    .ticker .row{display:flex;justify-content:center;gap:46px;flex-wrap:wrap;font-family:var(--serif);font-size:1.15rem;color:var(--champagne);font-style:italic;padding:0 16px}
+    .ticker .row span::before{content:"\25C6";color:var(--gold);font-style:normal;font-size:.55rem;margin-right:14px;vertical-align:middle}
+
+    section{padding:100px 0}
+    .head{text-align:center;max-width:680px;margin:0 auto 60px}
+    .head h2{font-size:clamp(2.2rem,4.6vw,3.6rem);color:var(--oxblood);margin-top:12px}
+    .head p{color:var(--ink-soft);margin-top:6px}
+
+    /* Pillars */
+    .pillars{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);background:#fff}
+    .pillar{padding:42px 30px 40px;border-right:1px solid var(--line);position:relative;transition:.3s}
+    .pillar:last-child{border-right:0}
+    .pillar:hover{background:var(--ivory)}
+    .pillar .no{font-family:var(--serif);font-size:3.4rem;color:var(--champagne);font-weight:600;line-height:1}
+    .pillar svg{width:34px;height:34px;stroke:var(--gold);fill:none;stroke-width:1.4;margin:16px 0 14px}
+    .pillar h3{font-size:1.7rem;color:var(--oxblood);margin-bottom:10px}
+    .pillar p{font-size:.93rem;color:var(--ink-soft)}
+
+    /* Feature split */
+    .split{background:var(--oxblood);color:var(--ivory);position:relative;overflow:hidden}
+    .split-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px;align-items:center}
+    .split h2{font-size:clamp(2.2rem,4.4vw,3.5rem);margin:14px 0 20px}
+    .split h2 em{color:var(--gold);font-weight:500}
+    .split p{color:var(--champagne);margin-bottom:16px}
+    .quote-card{border:1px solid var(--gold);padding:100px 48px 52px;position:relative;background:rgba(0,0,0,.14)}
+    .quote-card::before{content:"\201C";position:absolute;top:26px;left:48px;font-family:var(--serif);font-size:5.5rem;color:var(--gold);line-height:.8;height:50px}
+    .quote-card blockquote{font-family:var(--serif);font-size:clamp(1.7rem,3vw,2.35rem);line-height:1.25;font-weight:500;font-style:italic}
+    .quote-card cite{display:block;margin-top:24px;font-style:normal;font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);font-weight:700}
+
+    /* Picks */
+    .picks-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+    .pick{background:#fff;border:1px solid var(--champagne);display:flex;flex-direction:column;transition:.3s}
+    .pick:hover{transform:translateY(-6px);box-shadow:0 22px 40px rgba(110,27,34,.14);border-color:var(--gold)}
+    .pick .art{height:170px;display:grid;place-items:center;position:relative;color:var(--gold)}
+    .pick:nth-child(1) .art{background:linear-gradient(145deg,var(--oxblood),var(--burgundy))}
+    .pick:nth-child(2) .art{background:linear-gradient(145deg,#3b0d11,var(--oxblood))}
+    .pick:nth-child(3) .art{background:linear-gradient(145deg,var(--burgundy),#a8404a)}
+    .pick:nth-child(4) .art{background:linear-gradient(145deg,var(--espresso),#4a2a22)}
+    .pick .art svg{width:60px;height:60px;stroke:var(--gold);fill:none;stroke-width:1.2}
+    .pick .art::after{content:"";position:absolute;inset:12px;border:1px solid rgba(201,162,39,.45)}
+    .pick .body{padding:26px 24px 28px;display:flex;flex-direction:column;flex:1}
+    .pick h3{font-size:1.65rem;color:var(--oxblood);margin-bottom:8px}
+    .pick p{font-size:.92rem;color:var(--ink-soft);flex:1;margin-bottom:18px}
+    .soon{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--burgundy);border-top:1px solid var(--champagne);padding-top:14px}
+    .note{text-align:center;font-size:.8rem;color:var(--ink-soft);margin-top:30px;font-style:italic}
 
     /* About */
-    .about { background: #fff; border-top: 1px solid var(--champagne); border-bottom: 1px solid var(--champagne); }
-    .about-inner { max-width: 720px; margin: 0 auto; text-align: center; }
-    .about-inner p { margin-top: 14px; color: #4a3a33; }
+    .about{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px;align-items:center}
+    .about-card{background:linear-gradient(160deg,var(--oxblood),#3b0d11);color:var(--ivory);padding:48px 40px;border:1px solid var(--gold);outline:1px solid var(--line);outline-offset:10px;text-align:center}
+    .about-card .big{font-family:var(--serif);font-size:3.4rem;color:var(--gold);font-weight:600;line-height:1}
+    .about .about-card p{color:var(--champagne);font-size:.9rem;margin:14px 0 0}
+    .facts{list-style:none;margin-top:30px;text-align:left;border-top:1px solid var(--line)}
+    .facts li{display:flex;justify-content:space-between;gap:14px;padding:12px 0;border-bottom:1px solid var(--line);font-size:.85rem}
+    .facts li span:first-child{color:var(--gold);letter-spacing:.14em;text-transform:uppercase;font-size:.68rem;font-weight:700;padding-top:3px}
+    .facts li span:last-child{color:var(--ivory);text-align:right}
+    .about h2{font-size:clamp(2.2rem,4.4vw,3.4rem);color:var(--oxblood);margin:12px 0 22px}
+    .about p{color:#4a3a33;margin-bottom:16px}
 
-    /* Disclosure section */
-    .disclosure { background: var(--champagne); }
-    .disclosure .box { max-width: 780px; margin: 0 auto; }
-    .disclosure h2 { font-size: 2rem; color: var(--oxblood); margin-bottom: 12px; text-align: center; }
-    .disclosure p { font-size: 0.95rem; margin-bottom: 10px; }
+    /* Follow */
+    .follow{background:linear-gradient(155deg,var(--burgundy),var(--oxblood));color:var(--ivory);text-align:center}
+    .follow h2{font-size:clamp(2.3rem,5vw,4rem);margin:12px 0 14px}
+    .follow h2 em{color:var(--gold);font-weight:500}
+    .follow p{color:var(--champagne);max-width:34em;margin:0 auto 34px}
 
-    footer { background: var(--espresso); color: var(--champagne); padding: 36px 0; font-size: 0.85rem; text-align: center; }
-    footer p { max-width: 52em; margin: 0 auto 8px; }
-    footer .gold { color: var(--gold); }
+    /* Disclosures */
+    .disclosure{background:var(--champagne)}
+    .disc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+    .disc{background:var(--ivory);padding:28px 28px 26px;border-top:3px solid var(--gold)}
+    .disc h3{font-size:1.45rem;color:var(--oxblood);margin-bottom:8px}
+    .disc p{font-size:.9rem;color:#4a3a33}
+    .disclosure .head h2{color:var(--oxblood)}
 
-    @media (max-width: 760px) {
-      .hero-grid { grid-template-columns: 1fr; gap: 36px; }
-      .portrait { max-width: 300px; margin: 0 auto; }
-      nav a { margin: 0 14px 0 0; }
-      .btn.ghost { margin: 10px 0 0; }
+    footer{background:var(--espresso);color:var(--champagne);padding:60px 0 34px;font-size:.84rem}
+    .foot-top{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:center;padding-bottom:30px;border-bottom:1px solid rgba(201,162,39,.3);margin-bottom:26px}
+    footer .brand-name{color:var(--ivory)}
+    footer ul{display:flex;gap:26px;list-style:none;flex-wrap:wrap}
+    footer ul a{text-decoration:none;letter-spacing:.14em;text-transform:uppercase;font-size:.72rem}
+    footer ul a:hover{color:var(--gold)}
+    footer .small p{max-width:60em;margin-bottom:8px;opacity:.9}
+
+    @media (max-width:980px){
+      .hero-grid,.split-grid,.about-grid{grid-template-columns:1fr;gap:56px}
+      .hero-grid{padding:56px 24px 72px}
+      .portrait-wrap{max-width:360px}
+      .pillars{grid-template-columns:repeat(2,1fr)}
+      .pillar:nth-child(2){border-right:0}
+      .pillar:nth-child(-n+2){border-bottom:1px solid var(--line)}
+      .picks-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:640px){
+      section{padding:70px 0}
+      .nav ul{display:none}
+      .nav{height:66px}
+      .brand-name{font-size:1.35rem}
+      .pillars,.picks-grid,.disc-grid{grid-template-columns:1fr}
+      .pillar{border-right:0;border-bottom:1px solid var(--line)}
+      .pillar:last-child{border-bottom:0}
+      .quote-card{padding:84px 26px 36px}
+      .tag-chip{left:-4px}
+      .hero-meta{gap:24px}
+      .btn{width:100%;text-align:center}
+      .cta{flex-direction:column}
+      .nav .btn{width:auto}
     }
   </style>
 </head>
 <body>
 
-  <div class="ai-bar">
-    <strong>AI disclosure:</strong> Nina NGold is an AI-generated virtual persona, not a real person.
-  </div>
+  <div class="topbar"><b>AI disclosure:</b> Nina NGold is an AI-generated virtual persona, not a real person.</div>
 
-  <header>
+  <header class="site-header">
     <div class="wrap nav">
-      <a class="logo" href="#top">Nina <span>N</span>Gold</a>
-      <nav>
-        <a href="#picks">Picks</a>
-        <a href="#about">About</a>
-        <a href="#disclosure">Disclosures</a>
-      </nav>
+      <a class="brand" href="#top" aria-label="Nina NGold home">
+        <span class="mono">NN</span>
+        <span class="brand-name">Nina <span>N</span>Gold</span>
+      </a>
+      <ul>
+        <li><a href="#pillars">Philosophy</a></li>
+        <li><a href="#picks">Picks</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#disclosure">Disclosures</a></li>
+      </ul>
+      <a class="btn solid sm" href="https://www.instagram.com/ninangoldfinance/" target="_blank" rel="noopener">Follow</a>
     </div>
   </header>
 
   <main id="top">
+
+    <!-- HERO -->
     <div class="hero">
       <div class="wrap hero-grid">
         <div>
-          <p class="eyebrow">AI Finance Influencer &middot; Powered by AI</p>
+          <p class="label">AI Finance Influencer &middot; Powered by AI</p>
           <h1>Where finance meets <em>luxury.</em></h1>
-          <p>Curated picks for a polished, well-planned life: smart money tools, elevated travel, and refined everyday luxuries. Educational, honest, and always clearly labeled.</p>
-          <a class="btn" href="#picks">Explore the picks</a>
-          <a class="btn ghost" href="#disclosure">How this site earns</a>
+          <p class="lede">Money lessons with a polished point of view. Nina shares how wealth is built, protected and enjoyed, plus the refined things worth owning along the way. Educational, honest and always clearly labeled.</p>
+          <div class="cta">
+            <a class="btn solid" href="#picks">Explore the picks</a>
+            <a class="btn line" href="#about">Meet Nina</a>
+          </div>
+          <div class="hero-meta">
+            <div><strong>4</strong>Content pillars</div>
+            <div><strong>Weekly</strong>New lessons &amp; picks</div>
+            <div><strong>100%</strong>Disclosed, always</div>
+          </div>
         </div>
-        <div class="portrait" role="img" aria-label="Portrait placeholder for Nina NGold">
-          <span class="mono">NN</span>
-          <small>PORTRAIT COMING SOON</small>
+        <div class="portrait-wrap">
+          <div class="portrait">
+            <div class="fallback"><b>NN</b><small>PORTRAIT COMING SOON</small></div>
+            <img src="images/nina.jpg" alt="Nina NGold, AI-generated virtual finance influencer" width="860" height="1160" onerror="this.remove()">
+          </div>
+          <div class="tag-chip">Nina NGold<span>AI-generated persona</span></div>
         </div>
       </div>
     </div>
 
+    <!-- TICKER -->
+    <div class="ticker">
+      <div class="row">
+        <span>Investing</span><span>Wealth</span><span>Luxury living</span><span>Travel</span><span>Financial education</span>
+      </div>
+    </div>
+
+    <!-- PILLARS -->
+    <section id="pillars">
+      <div class="wrap">
+        <div class="head">
+          <p class="label dark">The Philosophy</p>
+          <h2>Wealth is a practice, not a destination</h2>
+          <div class="ornament"><i></i></div>
+          <p>Four ideas shape everything Nina shares, from a quiet lesson on saving to a hotel worth the upgrade.</p>
+        </div>
+        <div class="pillars">
+          <article class="pillar">
+            <div class="no">01</div>
+            <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 12 16 5l12 7M7 13v11M13 13v11M19 13v11M25 13v11M4 27h24"/></svg>
+            <h3>Financial Education</h3>
+            <p>Plain-spoken lessons on saving, investing and building a secure foundation. Education first, always.</p>
+          </article>
+          <article class="pillar">
+            <div class="no">02</div>
+            <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="11"/><path d="M16 9v14M12 13c0-2 2-3 4-3s4 1 4 3-2 3-4 3-4 1-4 3 2 3 4 3 4-1 4-3"/></svg>
+            <h3>Money Mechanics</h3>
+            <p>How budgets, accounts, interest and credit really work, explained without the jargon.</p>
+          </article>
+          <article class="pillar">
+            <div class="no">03</div>
+            <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 4 20 12l8 1-6 6 1.5 9L16 24l-7.500 4L10 19l-6-6 8-1z"/></svg>
+            <h3>Luxury Living</h3>
+            <p>Refined finds for home, beauty, fashion and drive, chosen for quality and lasting value.</p>
+          </article>
+          <article class="pillar">
+            <div class="no">04</div>
+            <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="11"/><path d="M5 16h22M16 5c4 3.500 4 18.500 0 22M16 5c-4 3.500-4 18.500 0 22"/></svg>
+            <h3>Travel</h3>
+            <p>Destinations, stays and ways to see the world well, with the planning done thoughtfully.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURE QUOTE -->
+    <section class="split">
+      <div class="wrap split-grid">
+        <div>
+          <p class="label">The Gold Standard</p>
+          <h2>Real wealth is <em>quiet.</em></h2>
+          <p>It does not announce itself. It shows up in your options: the ability to choose where you go, who you spend time with and how you spend your hours.</p>
+          <p>That is the standard behind every lesson and every pick on this site.</p>
+          <a class="btn line" style="margin-top:14px" href="#picks">See what is coming</a>
+        </div>
+        <div class="quote-card">
+          <blockquote>Building wealth does not mean sacrificing beauty. It means building a life so full that every moment feels like this one.</blockquote>
+          <cite>Nina NGold</cite>
+        </div>
+      </div>
+    </section>
+
+    <!-- PICKS -->
     <section id="picks">
       <div class="wrap">
-        <div class="section-title">
-          <h2>The Gold Standard Picks</h2>
-          <div class="rule"></div>
-          <p>Hand-picked collections are being prepared. Each pick will show a clear affiliate disclosure.</p>
+        <div class="head">
+          <p class="label dark">The Gold Standard Picks</p>
+          <h2>Curated, never cluttered</h2>
+          <div class="ornament"><i></i></div>
+          <p>Collections are being prepared now. Each one will show a clear affiliate disclosure before any link.</p>
         </div>
-        <div class="cards">
-          <article class="card">
-            <h3>Luxury Travel</h3>
-            <p>Hotels, flights, and experiences worth the upgrade.</p>
-            <span class="tag">Coming soon</span>
+        <div class="picks-grid">
+          <article class="pick">
+            <div class="art"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 22c0-4 3-5 5-6l3-6h10l4 6c2 1 4 2 4 6v2H3zM9 24a2.500 2.500 0 1 0 0 .1M23 24a2.500 2.500 0 1 0 0 .1"/></svg></div>
+            <div class="body">
+              <h3>Cars &amp; Driving</h3>
+              <p>Accessories and upgrades for the driver who loves the details.</p>
+              <span class="soon">Coming soon</span>
+            </div>
           </article>
-          <article class="card">
-            <h3>Money Tools</h3>
-            <p>Budgeting, saving, and investing tools, explained for education only.</p>
-            <span class="tag">Coming soon</span>
+          <article class="pick">
+            <div class="art"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="9" width="24" height="16" rx="2"/><path d="M4 14h24M8 20h6"/></svg></div>
+            <div class="body">
+              <h3>Money Tools</h3>
+              <p>Budgeting, saving and investing tools, explained for education only.</p>
+              <span class="soon">Coming soon</span>
+            </div>
           </article>
-          <article class="card">
-            <h3>Home &amp; Lifestyle</h3>
-            <p>Beauty, fashion, jewelry, and interiors with a refined touch.</p>
-            <span class="tag">Coming soon</span>
+          <article class="pick">
+            <div class="art"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 4 20 12l8 1-6 6 1.500 9L16 24l-7.500 4L10 19l-6-6 8-1z"/></svg></div>
+            <div class="body">
+              <h3>Home &amp; Lifestyle</h3>
+              <p>Beauty, fashion, jewelry and interiors with a refined touch.</p>
+              <span class="soon">Coming soon</span>
+            </div>
           </article>
-          <article class="card">
-            <h3>Cars &amp; Driving</h3>
-            <p>Accessories and upgrades for the driver who loves the details.</p>
-            <span class="tag">Coming soon</span>
+          <article class="pick">
+            <div class="art"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 20 29 8l-5 18-7-6-4 5-1-7z"/></svg></div>
+            <div class="body">
+              <h3>Luxury Travel</h3>
+              <p>Hotels, flights and experiences worth the upgrade.</p>
+              <span class="soon">Coming soon</span>
+            </div>
           </article>
         </div>
+        <p class="note">Some links on this site will be affiliate links. See the disclosures below.</p>
       </div>
     </section>
 
+    <!-- ABOUT -->
     <section id="about" class="about">
-      <div class="wrap about-inner">
-        <h2 style="font-size: clamp(2rem,4vw,2.8rem); color: var(--oxblood); font-weight: 600;">Meet Nina</h2>
-        <div class="rule"></div>
-        <p>Nina NGold is an AI-generated persona with a Manhattan, ex-Wall Street, finance-minded point of view. She shares ideas about money and luxury living in a professional yet approachable way. She is not a real person and does not have real-life experiences, so nothing here is presented as a personal result.</p>
+      <div class="wrap about-grid">
+        <aside class="about-card">
+          <div class="big">NN</div>
+          <p>AI-generated virtual persona</p>
+          <ul class="facts">
+            <li><span>Focus</span><span>Finance &amp; luxury</span></li>
+            <li><span>Base</span><span>Manhattan, in spirit</span></li>
+            <li><span>Style</span><span>Polished, approachable</span></li>
+            <li><span>Nature</span><span>Not a real person</span></li>
+          </ul>
+        </aside>
+        <div>
+          <p class="label dark">About</p>
+          <h2>Meet Nina</h2>
+          <p>Nina NGold is an AI-generated persona with a Manhattan, ex-Wall Street, finance-minded point of view. She shares ideas about money and luxury living in a way that is professional yet warm.</p>
+          <p>She is not a real person and has no real-life experiences, so nothing here is presented as a personal result. Her lessons are educational, and her picks are chosen for quality and value, with every affiliate relationship clearly disclosed.</p>
+          <p>Her goal is simple: help more women feel capable, informed and confident with money, and enjoy beautiful things along the way.</p>
+        </div>
       </div>
     </section>
 
+    <!-- FOLLOW -->
+    <section class="follow">
+      <div class="wrap">
+        <p class="label">Join the community</p>
+        <h2>Follow along, <em>daily.</em></h2>
+        <p>New lessons, travel ideas and curated finds appear first on Instagram. Say hello and send Nina your biggest money question.</p>
+        <a class="btn solid" href="https://www.instagram.com/ninangoldfinance/" target="_blank" rel="noopener">@ninangoldfinance</a>
+      </div>
+    </section>
+
+    <!-- DISCLOSURES -->
     <section id="disclosure" class="disclosure">
-      <div class="wrap box">
-        <h2>Disclosures</h2>
-        <p><strong>Affiliate links.</strong> Some links on this site are affiliate links. If you buy or sign up through them, I may earn a commission at no extra cost to you.</p>
-        <p><strong>Amazon.</strong> As an Amazon Associate I earn from qualifying purchases.</p>
-        <p><strong>AI persona.</strong> Nina NGold is an AI-generated virtual persona. Images and content are created with the help of AI tools.</p>
-        <p><strong>Not financial advice.</strong> Content is for education and entertainment only. It is not financial, investment, tax, or legal advice. Examples are illustrative, and nothing here promises returns. Please do your own research or speak with a licensed professional.</p>
+      <div class="wrap">
+        <div class="head">
+          <p class="label dark">Transparency</p>
+          <h2>Disclosures</h2>
+          <div class="ornament"><i></i></div>
+        </div>
+        <div class="disc-grid">
+          <div class="disc"><h3>Affiliate links</h3><p>Some links on this site are affiliate links. If you buy or sign up through them, I may earn a commission at no extra cost to you.</p></div>
+          <div class="disc"><h3>Amazon</h3><p>As an Amazon Associate I earn from qualifying purchases.</p></div>
+          <div class="disc"><h3>AI persona</h3><p>Nina NGold is an AI-generated virtual persona. Images and content are created with the help of AI tools.</p></div>
+          <div class="disc"><h3>Not financial advice</h3><p>Content is for education and entertainment only. It is not financial, investment, tax or legal advice. Examples are illustrative, and nothing here promises returns. Please do your own research or speak with a licensed professional.</p></div>
+        </div>
       </div>
     </section>
   </main>
 
   <footer>
     <div class="wrap">
-      <p><span class="gold">Nina NGold</span> &middot; AI Finance Influencer &middot; Powered by AI</p>
-      <p>Affiliate disclosure: I may earn a commission from links on this site. As an Amazon Associate I earn from qualifying purchases. Not financial advice.</p>
-      <p>&copy; 2026 Nina NGold. All rights reserved.</p>
+      <div class="foot-top">
+        <a class="brand" href="#top"><span class="mono">NN</span><span class="brand-name">Nina <span>N</span>Gold</span></a>
+        <ul>
+          <li><a href="#pillars">Philosophy</a></li>
+          <li><a href="#picks">Picks</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#disclosure">Disclosures</a></li>
+          <li><a href="https://www.instagram.com/ninangoldfinance/" target="_blank" rel="noopener">Instagram</a></li>
+        </ul>
+      </div>
+      <div class="small">
+        <p>Affiliate disclosure: I may earn a commission from links on this site. As an Amazon Associate I earn from qualifying purchases. Not financial advice.</p>
+        <p>Nina NGold is an AI-generated virtual persona. &copy; 2026 Nina NGold. All rights reserved.</p>
+      </div>
     </div>
   </footer>
 
