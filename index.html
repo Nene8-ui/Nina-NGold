@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nina NGold | Finance Meets Luxury</title>
+  <meta name="description" content="Nina NGold is an AI-generated finance and luxury lifestyle persona sharing curated picks. Some links are affiliate links.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --oxblood: #6E1B22;
+      --burgundy: #8C2733;
+      --gold: #C9A227;
+      --champagne: #E8D6A8;
+      --ivory: #F7F1E6;
+      --golden-hour: #F2B857;
+      --espresso: #2B1A15;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+      background: var(--ivory);
+      color: var(--espresso);
+      line-height: 1.65;
+    }
+    h1, h2, h3, .serif { font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif; }
+    a { color: inherit; }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+
+    /* Disclosure bar */
+    .ai-bar {
+      background: var(--espresso);
+      color: var(--champagne);
+      font-size: 0.82rem;
+      text-align: center;
+      padding: 9px 16px;
+      letter-spacing: 0.02em;
+    }
+    .ai-bar strong { color: var(--gold); }
+
+    /* Header */
+    header { background: var(--oxblood); color: var(--ivory); }
+    .nav { display: flex; align-items: center; justify-content: space-between; padding-top: 18px; padding-bottom: 18px; gap: 16px; flex-wrap: wrap; }
+    .logo { font-family: "Cormorant Garamond", Georgia, serif; font-size: 1.7rem; font-weight: 700; letter-spacing: 0.04em; text-decoration: none; }
+    .logo span { color: var(--gold); }
+    nav a { margin-left: 22px; text-decoration: none; font-size: 0.92rem; color: var(--champagne); }
+    nav a:hover { color: var(--gold); }
+
+    /* Hero */
+    .hero { background: linear-gradient(160deg, var(--oxblood) 0%, var(--burgundy) 100%); color: var(--ivory); padding: 56px 0 72px; }
+    .hero-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; align-items: center; }
+    .eyebrow { color: var(--gold); text-transform: uppercase; letter-spacing: 0.22em; font-size: 0.78rem; font-weight: 700; margin-bottom: 14px; }
+    .hero h1 { font-size: clamp(2.6rem, 6vw, 4.4rem); line-height: 1.05; font-weight: 600; margin-bottom: 18px; }
+    .hero h1 em { color: var(--gold); font-style: italic; }
+    .hero p { font-size: 1.08rem; color: var(--champagne); max-width: 34em; margin-bottom: 28px; }
+    .btn { display: inline-block; background: var(--gold); color: var(--espresso); padding: 13px 28px; border-radius: 2px; font-weight: 700; text-decoration: none; letter-spacing: 0.04em; font-size: 0.95rem; }
+    .btn:hover { background: var(--golden-hour); }
+    .btn.ghost { background: transparent; color: var(--ivory); border: 1px solid var(--gold); margin-left: 10px; }
+    .btn.ghost:hover { background: rgba(201, 162, 39, 0.15); }
+    .portrait {
+      aspect-ratio: 4 / 5;
+      border: 2px solid var(--gold);
+      outline: 1px solid rgba(201, 162, 39, 0.4);
+      outline-offset: 10px;
+      background: radial-gradient(circle at 50% 30%, var(--burgundy), var(--oxblood) 70%);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      color: var(--gold); text-align: center; padding: 20px;
+    }
+    .portrait .mono { font-family: "Cormorant Garamond", Georgia, serif; font-size: 4.6rem; font-weight: 600; line-height: 1; }
+    .portrait small { color: var(--champagne); margin-top: 12px; font-size: 0.8rem; letter-spacing: 0.08em; }
+
+    /* Sections */
+    section { padding: 68px 0; }
+    .section-title { text-align: center; margin-bottom: 40px; }
+    .section-title h2 { font-size: clamp(2rem, 4vw, 2.8rem); color: var(--oxblood); font-weight: 600; }
+    .section-title p { color: #6b5a52; max-width: 36em; margin: 8px auto 0; }
+    .rule { width: 64px; height: 2px; background: var(--gold); margin: 14px auto 0; }
+
+    /* Pick cards */
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 22px; }
+    .card { background: #fff; border: 1px solid var(--champagne); border-top: 3px solid var(--gold); padding: 26px 22px; }
+    .card h3 { font-size: 1.5rem; color: var(--oxblood); margin-bottom: 8px; }
+    .card p { font-size: 0.95rem; color: #5a4a43; margin-bottom: 16px; }
+    .tag { display: inline-block; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--burgundy); border: 1px solid var(--champagne); padding: 4px 10px; background: var(--ivory); }
+
+    /* About */
+    .about { background: #fff; border-top: 1px solid var(--champagne); border-bottom: 1px solid var(--champagne); }
+    .about-inner { max-width: 720px; margin: 0 auto; text-align: center; }
+    .about-inner p { margin-top: 14px; color: #4a3a33; }
+
+    /* Disclosure section */
+    .disclosure { background: var(--champagne); }
+    .disclosure .box { max-width: 780px; margin: 0 auto; }
+    .disclosure h2 { font-size: 2rem; color: var(--oxblood); margin-bottom: 12px; text-align: center; }
+    .disclosure p { font-size: 0.95rem; margin-bottom: 10px; }
+
+    footer { background: var(--espresso); color: var(--champagne); padding: 36px 0; font-size: 0.85rem; text-align: center; }
+    footer p { max-width: 52em; margin: 0 auto 8px; }
+    footer .gold { color: var(--gold); }
+
+    @media (max-width: 760px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 36px; }
+      .portrait { max-width: 300px; margin: 0 auto; }
+      nav a { margin: 0 14px 0 0; }
+      .btn.ghost { margin: 10px 0 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="ai-bar">
+    <strong>AI disclosure:</strong> Nina NGold is an AI-generated virtual persona, not a real person.
+  </div>
+
+  <header>
+    <div class="wrap nav">
+      <a class="logo" href="#top">Nina <span>N</span>Gold</a>
+      <nav>
+        <a href="#picks">Picks</a>
+        <a href="#about">About</a>
+        <a href="#disclosure">Disclosures</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <div class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">AI Finance Influencer &middot; Powered by AI</p>
+          <h1>Where finance meets <em>luxury.</em></h1>
+          <p>Curated picks for a polished, well-planned life: smart money tools, elevated travel, and refined everyday luxuries. Educational, honest, and always clearly labeled.</p>
+          <a class="btn" href="#picks">Explore the picks</a>
+          <a class="btn ghost" href="#disclosure">How this site earns</a>
+        </div>
+        <div class="portrait" role="img" aria-label="Portrait placeholder for Nina NGold">
+          <span class="mono">NN</span>
+          <small>PORTRAIT COMING SOON</small>
+        </div>
+      </div>
+    </div>
+
+    <section id="picks">
+      <div class="wrap">
+        <div class="section-title">
+          <h2>The Gold Standard Picks</h2>
+          <div class="rule"></div>
+          <p>Hand-picked collections are being prepared. Each pick will show a clear affiliate disclosure.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <h3>Luxury Travel</h3>
+            <p>Hotels, flights, and experiences worth the upgrade.</p>
+            <span class="tag">Coming soon</span>
+          </article>
+          <article class="card">
+            <h3>Money Tools</h3>
+            <p>Budgeting, saving, and investing tools, explained for education only.</p>
+            <span class="tag">Coming soon</span>
+          </article>
+          <article class="card">
+            <h3>Home &amp; Lifestyle</h3>
+            <p>Beauty, fashion, jewelry, and interiors with a refined touch.</p>
+            <span class="tag">Coming soon</span>
+          </article>
+          <article class="card">
+            <h3>Cars &amp; Driving</h3>
+            <p>Accessories and upgrades for the driver who loves the details.</p>
+            <span class="tag">Coming soon</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="wrap about-inner">
+        <h2 style="font-size: clamp(2rem,4vw,2.8rem); color: var(--oxblood); font-weight: 600;">Meet Nina</h2>
+        <div class="rule"></div>
+        <p>Nina NGold is an AI-generated persona with a Manhattan, ex-Wall Street, finance-minded point of view. She shares ideas about money and luxury living in a professional yet approachable way. She is not a real person and does not have real-life experiences, so nothing here is presented as a personal result.</p>
+      </div>
+    </section>
+
+    <section id="disclosure" class="disclosure">
+      <div class="wrap box">
+        <h2>Disclosures</h2>
+        <p><strong>Affiliate links.</strong> Some links on this site are affiliate links. If you buy or sign up through them, I may earn a commission at no extra cost to you.</p>
+        <p><strong>Amazon.</strong> As an Amazon Associate I earn from qualifying purchases.</p>
+        <p><strong>AI persona.</strong> Nina NGold is an AI-generated virtual persona. Images and content are created with the help of AI tools.</p>
+        <p><strong>Not financial advice.</strong> Content is for education and entertainment only. It is not financial, investment, tax, or legal advice. Examples are illustrative, and nothing here promises returns. Please do your own research or speak with a licensed professional.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p><span class="gold">Nina NGold</span> &middot; AI Finance Influencer &middot; Powered by AI</p>
+      <p>Affiliate disclosure: I may earn a commission from links on this site. As an Amazon Associate I earn from qualifying purchases. Not financial advice.</p>
+      <p>&copy; 2026 Nina NGold. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
