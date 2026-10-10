@@ -22,7 +22,8 @@
       --sans:"DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
     }
     *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
+    html{scroll-behavior:smooth;overflow-x:clip}
+    body{overflow-x:clip}
     body{font-family:var(--sans);background:var(--ivory);color:var(--espresso);line-height:1.7;-webkit-font-smoothing:antialiased}
     img{max-width:100%;display:block}
     a{color:inherit}
@@ -114,7 +115,8 @@
     .quote-card cite{display:block;margin-top:24px;font-style:normal;font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);font-weight:700}
 
     /* Picks */
-    .picks-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+    .picks-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+    .pick{min-width:0}
     .pick{background:#fff;border:1px solid var(--champagne);display:flex;flex-direction:column;transition:.3s}
     .pick:hover{transform:translateY(-6px);box-shadow:0 22px 40px rgba(110,27,34,.14);border-color:var(--gold)}
     .pick .art{height:280px;display:grid;place-items:center;position:relative;color:var(--gold)}
@@ -123,7 +125,7 @@
     .pick:nth-child(3) .art{background:linear-gradient(145deg,var(--burgundy),#a8404a)}
     .pick:nth-child(4) .art{background:linear-gradient(145deg,var(--espresso),#4a2a22)}
     .pick .art svg{width:60px;height:60px;stroke:var(--gold);fill:none;stroke-width:1.2}
-    .pick .art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .pick .art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 20%}
     .pick .art::after{content:"";position:absolute;inset:12px;border:1px solid rgba(201,162,39,.45)}
     .pick .body{padding:26px 24px 28px;display:flex;flex-direction:column;flex:1}
     .pick h3{font-size:1.65rem;color:var(--oxblood);margin-bottom:8px}
@@ -174,7 +176,10 @@
       .pillars{grid-template-columns:repeat(2,1fr)}
       .pillar:nth-child(2){border-right:0}
       .pillar:nth-child(-n+2){border-bottom:1px solid var(--line)}
-      .picks-grid{grid-template-columns:repeat(2,1fr)}
+      .picks-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    }
+    @media (max-width:760px){
+      .nav ul{display:none}
     }
     @media (max-width:640px){
       section{padding:70px 0}
@@ -191,7 +196,7 @@
       .cta{flex-direction:column}
       .nav .btn{width:auto}
     }
-  html,body{overflow-x:clip}html{scroll-behavior:smooth}img{max-width:100%}.picks-grid>*,.pick{min-width:0}@media(max-width:760px){nav ul{display:none}}</style>
+  </style>
 </head>
 <body>
 
@@ -230,7 +235,7 @@
         <div class="portrait-wrap">
           <div class="portrait">
             <div class="fallback"><b>NN</b><small>PORTRAIT COMING SOON</small></div>
-            <img src="images/nina.jpg" alt="Nina NGold, AI-generated virtual luxury and travel influencer" width="860" height="1160" onerror="this.remove()">
+            <img src="images/nina-hero.jpg" alt="Nina NGold, AI-generated virtual luxury and travel influencer" width="860" height="1160" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='images/nina.jpg'}else{this.remove()}">
           </div>
           <div class="tag-chip">Nina NGold<span>AI-generated persona</span></div>
         </div>
@@ -310,7 +315,7 @@
         </div>
         <div class="picks-grid">
           <article class="pick">
-            <div class="art"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 4 20 12l8 1-6 6 1.5 9L16 24l-7.5 4L10 19l-6-6 8-1z"/></svg><img src="images/card-fashion.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+            <div class="art"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 4 20 12l8 1-6 6 1.5 9L16 24l-7.5 4L10 19l-6-6 8-1z"/></svg><img src="images/card-fashion.jpg" alt="" loading="lazy" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='images/picks-fashion.jpg'}else{this.remove()}"></div>
             <div class="body">
               <h3>Fashion &amp; Style</h3>
               <p>Clothing, shoes and accessories with a refined touch.</p>
@@ -318,7 +323,7 @@
             </div>
           </article>
           <article class="pick">
-            <div class="art"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M9 6h14l5 7-12 15L4 13zM4 13h24M12 6l-2 7 6 15 6-15-2-7"/></svg><img src="images/card-beauty.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+            <div class="art"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M9 6h14l5 7-12 15L4 13zM4 13h24M12 6l-2 7 6 15 6-15-2-7"/></svg><img src="images/card-beauty.jpg" alt="" loading="lazy" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='images/picks-beauty.jpg'}else{this.remove()}"></div>
             <div class="body">
               <h3>Beauty &amp; Jewelry</h3>
               <p>Skincare, fragrance and fine jewelry worth the splurge.</p>
@@ -326,7 +331,7 @@
             </div>
           </article>
           <article class="pick">
-            <div class="art"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 15 16 5l12 10M7 13v13h18V13M13 26v-7h6v7"/></svg><img src="images/card-home.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+            <div class="art"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 15 16 5l12 10M7 13v13h18V13M13 26v-7h6v7"/></svg><img src="images/card-home.jpg" alt="" loading="lazy" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='images/picks-home.jpg'}else{this.remove()}"></div>
             <div class="body">
               <h3>Home &amp; Living</h3>
               <p>Interiors, decor and everyday luxuries for a beautiful home.</p>
@@ -334,7 +339,7 @@
             </div>
           </article>
           <article class="pick">
-            <div class="art"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 20 29 8l-5 18-7-6-4 5-1-7z"/></svg><img src="images/card-travel.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+            <div class="art"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 20 29 8l-5 18-7-6-4 5-1-7z"/></svg><img src="images/card-travel.jpg" alt="" loading="lazy" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='images/picks-travel.jpg'}else{this.remove()}"></div>
             <div class="body">
               <h3>Luxury Travel</h3>
               <p>Hotels, flights and experiences worth the upgrade.</p>
